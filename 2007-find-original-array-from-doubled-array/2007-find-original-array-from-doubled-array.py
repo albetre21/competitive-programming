@@ -6,7 +6,6 @@ class Solution:
         changed.sort()
         arr1 = []
         len_arr2 = 0
-
         match_idx = 0
         for idx, value in enumerate(changed):       
             if len(arr1) == len_arr2:
