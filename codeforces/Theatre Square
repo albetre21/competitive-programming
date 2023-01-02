@@ -1,0 +1,9 @@
+import math
+
+size = input().split()
+m, n, a = int(size[0]), int(size[1]), int(size[2])
+
+count = math.ceil(m / a)
+count *= math.ceil(n / a)
+
+print(count)
