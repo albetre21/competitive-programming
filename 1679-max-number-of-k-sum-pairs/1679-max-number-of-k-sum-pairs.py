@@ -1,3 +1,4 @@
+import math 
 class Solution:
     def maxOperations(self, nums: List[int], k: int) -> int:
         counts=defaultdict(int)
@@ -10,4 +11,4 @@ class Solution:
                 counts[k-i]+=1
         
         return res_value
-        
+    
