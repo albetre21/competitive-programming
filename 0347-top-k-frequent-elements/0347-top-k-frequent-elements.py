@@ -1,16 +1,19 @@
+import heapq
 class Solution:
     def topKFrequent(self, nums: List[int], k: int) -> List[int]:
-        ctr=Counter(nums)
-        count=list(ctr.values())
-        dic=list(dict.fromkeys(nums))
-        res=dict(zip(dic,count))
-        final=sorted(res.items(),key=lambda x:(x[1],x[0]),reverse=True);
-        obj=[]
-        ans=[]
-        for i in final:
-             obj.append(i[0])
-        for i in range(k):
-            ans.append(obj[i])
-       
-    
-        return ans
+        ans = []
+        freq=dict()
+        for num in nums:
+            if num not in freq:
+                freq[num]=1
+            else:
+                freq[num] +=1
+        
+        for key, val in freq.items():
+            if len(ans)<k:
+                heapq.heappush(ans,[val, key])
+                
+            else:
+                    heapq.heappushpop(ans,[val, key])
+                    
+        return[key for value, key in ans ]
