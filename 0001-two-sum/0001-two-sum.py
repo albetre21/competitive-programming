@@ -6,3 +6,4 @@ class Solution:
                 return [values[target - value], i]
             else:
                 values[value] = i
+        
